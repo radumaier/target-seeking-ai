@@ -22,7 +22,7 @@ var MUTATION_RATE    = 0.3;
 var ELITISM          = Math.round(0.1 * PLAYER_AMOUNT);
 
 // Trained population
-var USE_TRAINED_POP = true;
+var USE_TRAINED_POP = false;
 
 /** Global vars */
 var neat;
@@ -30,7 +30,7 @@ var neat;
 /** Construct the genetic algorithm */
 function initNeat(){
   neat = new Neat(
-    6, 1,
+    1, 1,
     null,
     {
       mutation: [

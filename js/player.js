@@ -75,17 +75,11 @@ Player.prototype = {
 
   /** Detect and normalize inputs */
   detect: function(){
-    var dist = Math.sqrt(this.x, this.y, walker.x, walker.y) / Math.sqrt(WIDTH**2 + HEIGHT**2);
     var targetAngle = angleToPoint(this.x, this.y, walker.x, walker.y) / TWO_PI;
-    var vx = (this.vx + MAX_SPEED) / MAX_SPEED;
-    var vy = (this.vy + MAX_SPEED) / MAX_SPEED;
-    var tvx = (walker.vx + MAX_SPEED) / MAX_SPEED;
-    var tvy = (walker.vy + MAX_SPEED) / MAX_SPEED;
-
+    
     // NaN checking
     targetAngle = isNaN(targetAngle) ? 0 : targetAngle;
-    dist = isNaN(dist) ? 0 : dist;
 
-    return [vx, vy, tvx, tvy, targetAngle, dist];
+    return [targetAngle];
   },
 };
